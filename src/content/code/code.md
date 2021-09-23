@@ -759,6 +759,7 @@ Executor.execute(schema, query) map println
   - [GraphQL-ESLint](https://github.com/dotansimha/graphql-eslint)：将 GraphQL AST 集成到 ESLint 核心中（作为解析器）。
   - [GraphQL Modules](https://www.graphql-modules.com)：使你可以将后端实现分拆成小型、可重用、易于实现和易于测试的部分。
   - [GraphQL Mesh](https://www.graphql-mesh.com)：允许你使用 GraphQL 查询语言来访问不运行 GraphQL 的远程 API（也包括那些运行 GraphQL 的远程 API）中的数据。它可以作为其他服务的网关，也可以作为本地 GraphQL schema 运行，以聚合来自远程 API 的数据。
+  - [Graphql Calculator](https://github.com/graphql-calculator/graphql-calculator)：基于指令和表达式实现的轻量级查询计算引擎，允许你基于指令和表达式对查询字段进行加工转换和编排控制。
 
 ## 服务
 

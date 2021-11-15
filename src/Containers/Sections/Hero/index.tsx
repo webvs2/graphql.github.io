@@ -1,9 +1,10 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import HeaderLinks from '../../../components/HeaderLinks';
+import Search from '../../../components/Search';
 import Prism from '../../../components/Prism';
 
-  
+
 const Hero = () => {
     return (
       <div className="hero">
@@ -11,6 +12,7 @@ const Hero = () => {
           <header aria-hidden>
             <section>
               <HeaderLinks />
+              <Search searchID="hero-search-input" />
             </section>
           </header>
           <section className="intro">

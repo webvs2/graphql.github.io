@@ -10,6 +10,8 @@ interface Props {
   guestBio: string
   rawMarkdownBody: string
   sideBarData: any
+  pageContext: any
+  tags: Array<string>
 }
 
 const index = ({
@@ -20,6 +22,8 @@ const index = ({
   guestBio,
   rawMarkdownBody,
   sideBarData,
+  pageContext,
+  tags,
 }: Props) => {
   return (
     <section>
@@ -32,21 +36,25 @@ const index = ({
           guestBio={guestBio}
           rawMarkdownBody={rawMarkdownBody}
           isPermalink={true}
+          pageContext={pageContext}
+          tags={tags}
         />
-        <BlogSidebar posts={sideBarData[0].links.sort(((a: any, b: any) => {
-            const aDate = new Date(a.frontmatter.date);
+        <BlogSidebar
+          posts={sideBarData[0].links.sort((a: any, b: any) => {
+            const aDate = new Date(a.frontmatter.date)
             const bDate = new Date(b.frontmatter.date)
             if (aDate > bDate) {
-                return -1;
+              return -1
             } else if (aDate < bDate) {
-                return 1;
+              return 1
             }
-            return 0;
-        }))} currentPermalink={permalink} />
+            return 0
+          })}
+          currentPermalink={permalink}
+        />
       </div>
     </section>
   )
 }
 
 export default index
-

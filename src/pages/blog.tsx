@@ -4,7 +4,7 @@ import BlogPost from "../components/BlogPost"
 import BlogSidebar from "../components/BlogSidebar"
 import { graphql } from "gatsby"
 
-export default ({ pageContext, data }) => {
+export default ({ pageContext, data }: any) => {
   const posts = data.allMarkdownRemark.edges
     .map((e: any) => e.node)
     .sort((a: any, b: any) => {
@@ -17,6 +17,7 @@ export default ({ pageContext, data }) => {
       }
       return 0
     })
+
   return (
     <Layout title="Blog | GraphQL" pageContext={pageContext}>
       <section>
@@ -25,8 +26,16 @@ export default ({ pageContext, data }) => {
             {posts.map(
               (
                 {
-                  frontmatter: { title, date, permalink, byline, guestBio },
+                  frontmatter: {
+                    title,
+                    date,
+                    permalink,
+                    byline,
+                    guestBio,
+                    tags,
+                  },
                   rawMarkdownBody,
+                  excerpt,
                 }: any,
                 i
               ) => (
@@ -39,6 +48,10 @@ export default ({ pageContext, data }) => {
                   guestBio={guestBio}
                   rawMarkdownBody={rawMarkdownBody}
                   isPermalink={false}
+                  pageContext={pageContext}
+                  excerpt={excerpt}
+                  showExcerpt
+                  tags={tags}
                 />
               )
             )}
@@ -65,8 +78,10 @@ export const query = graphql`
             guestBio
             sublinks
             layout
+            tags
           }
           id
+          excerpt
           rawMarkdownBody
         }
       }

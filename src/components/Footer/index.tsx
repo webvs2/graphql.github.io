@@ -25,19 +25,27 @@ const getLinks = (sourcePath: string): FooterLinks[] => [
     ],
   },
   {
-    text: "代码",
+    text: "规范和代码",
     href: "/code",
     subsections: [
-      { text: "服务端", href: "/code/#server-libraries" },
-      { text: "客户端", href: "/code/#graphql-clients" },
+      { text: "规范", href: "https://spec.graphql.cn" },
+      { text: "语言", href: "/code/#languages" },
       { text: "工具", href: "/code/#tools" },
+      { text: "服务", href: "/code/#services" },
+      {
+        text: "编辑此页 ✎",
+        href:
+          "https://github.com/xitu/graphql.github.io/edit/source/" +
+          sourcePath,
+      },
     ],
   },
   {
     text: "社区",
     href: "/community",
     subsections: [
-      { text: "即将到来的活动", href: "/community/upcoming-events/" },
+      { text: "行为守则", href: "/codeofconduct/" },
+      { text: "GitHub", href: "https://github.com/graphql" },
       {
         text: "Stack Overflow",
         href: "http://stackoverflow.com/questions/tagged/graphql",
@@ -47,26 +55,18 @@ const getLinks = (sourcePath: string): FooterLinks[] => [
         href: "https://www.facebook.com/groups/graphql.community/",
       },
       { text: "Twitter", href: "https://twitter.com/GraphQL" },
+      { text: "即将到来的活动", href: "/community/upcoming-events/" },
     ],
   },
   {
-    text: "More",
+    text: "GraphQL 基金会",
     subsections: [
-      {
-        text: "GraphQL 规范",
-        href: "/https://graphql.github.io/graphql-spec/",
-      },
-      { text: "GraphQL 基金会", href: "https://foundation.graphql.org/" },
-      {
-        text: "GraphQL GitHub",
-        href: "https://github.com/graphql",
-      },
-      {
-        text: "编辑本页 ✎",
-        href:
-          "https://github.com/graphql/graphql.github.io/edit/source/" +
-          sourcePath,
-      },
+      { text: "关于", href: "/foundation/" },
+      { text: "加入", href: "/foundation/join/" },
+      { text: "会员", href: "/foundation/members/" },
+      { text: "总览", href: "https://landscape.graphql.org" },
+      { text: "图表", href: "https://github.com/graphql/artwork" },
+      { text: "联系", href: "/foundation/contact/" },
     ],
   },
 ]
@@ -95,7 +95,11 @@ const Footer = ({sourcePath}: { sourcePath: string }) => {
           ))}
         </section>
         <section className="copyright">
-          Copyright © {`${new Date().getFullYear()}`} GraphQL 基金会。保留所有权利。Linux 基金会已经注册了商标和使用商标。有关 Linux 基金会的商标清单，请参阅我们的 <a href="https://www.linuxfoundation.org/trademark-usage">商标使用</a> 页面。Linux 是 Linus Torvalds 的注册商标。<a href="http://www.linuxfoundation.org/privacy">隐私政策</a> 和 <a href="http://www.linuxfoundation.org/terms">使用条款</a>。
+            Copyright © {`${new Date().getFullYear()}`} GraphQL 基金会。保留所有权利。
+            Linux 基金会已经注册了商标和使用商标。有关 Linux 基金会的商标清单，请参阅我们的
+            <a href="https://www.linuxfoundation.org/trademark-usage">商标使用</a> 页面
+            Linux 是 Linus Torvalds 的注册商标。<a href="http://www.linuxfoundation.org/privacy">隐私政策</a>
+            和 <a href="http://www.linuxfoundation.org/terms">使用条款</a>。
         </section>
       </footer>
 

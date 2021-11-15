@@ -9,19 +9,20 @@ interface Props {
   permalink: string
   sideBarData: any
   rawMarkdownBody: string
+  pageContext: any
 }
 
-const index = ({ title, nextDoc, sideBarData, rawMarkdownBody }: Props) => {
+const index = ({ title, nextDoc, sideBarData, rawMarkdownBody, pageContext }: Props) => {
   return (
     <section>
       <div className="documentationContent">
         <div className="inner-content">
           <h1>{title}</h1>
-          <Marked>{rawMarkdownBody}</Marked>
+          <Marked pageContext={pageContext}>{rawMarkdownBody}</Marked>
           {nextDoc?.frontmatter?.permalink && (
             <Link className="read-next" to={nextDoc.frontmatter.permalink}>
               <span className="read-next-continue">
-                继续阅读 &rarr;
+                Continue Reading &rarr;
               </span>
               <span className="read-next-title">
                 {nextDoc.frontmatter.title}

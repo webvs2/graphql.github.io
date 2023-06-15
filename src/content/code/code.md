@@ -304,7 +304,7 @@ var schema = buildSchema(`
 
 var root = { hello: () => 'Hello world!' };
 
-graphql(schema, '{ hello }', root).then((response) => {
+graphql({schema:schema, source:'{ hello }', rootValue:root}).then((response) => {
   console.log(response);
 });
 ```

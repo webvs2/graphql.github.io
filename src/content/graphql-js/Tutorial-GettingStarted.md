@@ -40,7 +40,7 @@ var root = {
 };
 
 // 运行 GraphQL query '{ hello }' ，输出响应
-graphql(schema, '{ hello }', root).then((response) => {
+graphql({schema:schema, source:'{ hello }', rootValue:root}).then((response) => {
   console.log(response);
 });
 ```
